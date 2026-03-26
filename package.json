@@ -1,0 +1,22 @@
+{
+  "name": "ggbux-premium-sales-bot",
+  "version": "1.0.0",
+  "description": "Bot de vendas premium para Discord com loja, tickets, pagamentos, verificação, moderação e painel administrativo.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "deploy:commands": "node scripts/deploy-commands.js",
+    "lint:check": "node scripts/check-syntax.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "qrcode": "^1.5.4"
+  }
+}

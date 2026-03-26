@@ -1,0 +1,75 @@
+export function createDefaultGuildConfig(guildId) {
+  return {
+    guildId,
+    store: {
+      open: true,
+      maintenance: false,
+      requireVerificationToBuy: false,
+      welcomeMessage: 'Bem-vindo à loja.',
+      postPurchaseMessage: 'Seu pedido foi criado. Finalize o pagamento para receber a entrega.',
+    },
+    visuals: {
+      primaryColor: 0x2b2d31,
+      secondaryColor: 0x57f287,
+      footer: 'GGBUX OFICIAL • Compra Segura',
+      bannerUrl: '',
+      thumbnailUrl: '',
+      gifUrl: '',
+      successEmoji: '✅',
+      errorEmoji: '❌',
+      alertEmoji: '⚠️',
+    },
+    payments: {
+      mode: 'hybrid',
+      autoApprove: true,
+      staffManualApproval: false,
+      qrDelivery: 'both',
+      mercadopago: { enabled: true, webhookSecret: '' },
+      pixManual: {
+        enabled: true,
+        key: '',
+        receiverName: '',
+        copyPaste: '',
+        qrText: '',
+        imageUrl: '',
+        message: 'Envie o comprovante no ticket para a conferência.',
+      },
+    },
+    tickets: {
+      categoryId: '',
+      staffRoleId: '',
+      customerRoleId: '',
+      preventDuplicates: true,
+      closeAfterDelivery: false,
+      autoCloseMinutes: 0,
+      prefix: 'pedido',
+      openMessage: 'Seu ticket foi aberto com sucesso.',
+      paymentMessage: 'Use os botões abaixo para acompanhar o pagamento.',
+      deliveryMessage: 'Entrega concluída.',
+    },
+    verification: {
+      enabled: false,
+      roleId: '',
+      channelId: '',
+      message: 'Clique para verificar sua conta.',
+      blockStoreUntilVerified: false,
+    },
+    logs: {
+      channelId: '',
+      enabledTypes: {
+        purchases: true,
+        payments: true,
+        deliveries: true,
+        tickets: true,
+        moderation: true,
+        config: true,
+        stock: true,
+      },
+    },
+    alerts: { stockLowTargetId: '', stockLowThreshold: 3 },
+    security: { adminRoleIds: [] },
+    presets: { visual: 'dark-premium' },
+  };
+}
+}
+
